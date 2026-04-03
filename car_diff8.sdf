@@ -1,0 +1,759 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+    <world name="f1_circuit_world">
+        <physics name="1ms" type="ignored">
+            <max_step_size>0.001</max_step_size>
+            <real_time_factor>1.0</real_time_factor>
+        </physics>
+        <plugin filename="libignition-gazebo-physics-system.so" name="ignition::gazebo::systems::Physics" />
+        <plugin filename="libignition-gazebo-user-commands-system.so" name="ignition::gazebo::systems::UserCommands" />
+        <plugin filename="libignition-gazebo-scene-broadcaster-system.so" name="ignition::gazebo::systems::SceneBroadcaster" />
+        <plugin filename="libignition-gazebo-sensors-system.so" name="ignition::gazebo::systems::Sensors">
+            <render_engine>ogre</render_engine>
+        </plugin>
+        <light type="directional" name="sun">
+            <cast_shadows>true</cast_shadows>
+            <pose>0 0 20 0 0 0</pose>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+            <specular>0.3 0.3 0.3 1</specular>
+            <direction>-0.5 0.1 -0.9</direction>
+        </light>
+        <model name="ground_plane">
+            <static>true</static>
+            <link name="link">
+                <collision name="collision"><geometry><plane><normal>0 0 1</normal></plane></geometry></collision>
+                <visual name="visual">
+                    <geometry><plane><normal>0 0 1</normal><size>200 200</size></plane></geometry>
+                    <material><ambient>0.5 0.5 0.5 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material>
+                </visual>
+            </link>
+        </model>
+        <model name="f1_track">
+            <static>true</static>
+    <link name='outer_0'>
+      <collision name='outer_0_col'>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_0_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-10.0000 2.0000 0 0 -0 0.00000</pose>
+    </link>
+    <link name='outer_1'>
+      <collision name='outer_1_col'>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_1_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-6.0000 2.0000 0 0 -0 0.00000</pose>
+    </link>
+    <link name='outer_2'>
+      <collision name='outer_2_col'>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_2_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-2.0000 2.0000 0 0 -0 0.00000</pose>
+    </link>
+    <link name='outer_3'>
+      <collision name='outer_3_col'>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_3_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>2.0000 2.0000 0 0 -0 0.00000</pose>
+    </link>
+    <link name='outer_4'>
+      <collision name='outer_4_col'>
+        <geometry><box><size>3.1048 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_4_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.1048 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>5.5000 1.6000 0 0 -0 -0.26060</pose>
+    </link>
+    <link name='outer_5'>
+      <collision name='outer_5_col'>
+        <geometry><box><size>2.3324 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_5_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.3324 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>8.0000 0.6000 0 0 -0 -0.54042</pose>
+    </link>
+    <link name='outer_6'>
+      <collision name='outer_6_col'>
+        <geometry><box><size>2.5000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_6_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.5000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>10.0000 -0.7500 0 0 -0 -0.64350</pose>
+    </link>
+    <link name='outer_7'>
+      <collision name='outer_7_col'>
+        <geometry><box><size>2.5000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_7_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.5000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>11.7500 -2.5000 0 0 -0 -0.92730</pose>
+    </link>
+    <link name='outer_8'>
+      <collision name='outer_8_col'>
+        <geometry><box><size>2.2361 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_8_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.2361 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>12.0000 -4.5000 0 0 -0 -2.03444</pose>
+    </link>
+    <link name='outer_9'>
+      <collision name='outer_9_col'>
+        <geometry><box><size>2.2361 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_9_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.2361 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>10.5000 -6.0000 0 0 -0 -2.67795</pose>
+    </link>
+    <link name='outer_10'>
+      <collision name='outer_10_col'>
+        <geometry><box><size>2.5000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_10_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.5000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>8.2500 -6.5000 0 0 -0 3.14159</pose>
+    </link>
+    <link name='outer_11'>
+      <collision name='outer_11_col'>
+        <geometry><box><size>3.1623 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_11_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.1623 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>5.5000 -6.0000 0 0 -0 2.81984</pose>
+    </link>
+    <link name='outer_12'>
+      <collision name='outer_12_col'>
+        <geometry><box><size>4.0311 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_12_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.0311 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>2.0000 -5.2500 0 0 -0 3.01724</pose>
+    </link>
+    <link name='outer_13'>
+      <collision name='outer_13_col'>
+        <geometry><box><size>3.0414 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_13_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.0414 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-1.5000 -4.7500 0 0 -0 2.97644</pose>
+    </link>
+    <link name='outer_14'>
+      <collision name='outer_14_col'>
+        <geometry><box><size>2.2361 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_14_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.2361 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-4.0000 -4.0000 0 0 -0 2.67795</pose>
+    </link>
+    <link name='outer_15'>
+      <collision name='outer_15_col'>
+        <geometry><box><size>1.5811 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_15_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>1.5811 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-5.2500 -2.7500 0 0 -0 1.89255</pose>
+    </link>
+    <link name='outer_16'>
+      <collision name='outer_16_col'>
+        <geometry><box><size>1.5811 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_16_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>1.5811 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-5.2500 -1.2500 0 0 -0 1.24905</pose>
+    </link>
+    <link name='outer_17'>
+      <collision name='outer_17_col'>
+        <geometry><box><size>1.8028 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_17_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>1.8028 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-5.7500 0.0000 0 0 -0 2.55359</pose>
+    </link>
+    <link name='outer_18'>
+      <collision name='outer_18_col'>
+        <geometry><box><size>1.5000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_18_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>1.5000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-7.2500 0.5000 0 0 -0 3.14159</pose>
+    </link>
+    <link name='outer_19'>
+      <collision name='outer_19_col'>
+        <geometry><box><size>1.4142 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_19_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>1.4142 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-8.5000 0.0000 0 0 -0 -2.35619</pose>
+    </link>
+    <link name='outer_20'>
+      <collision name='outer_20_col'>
+        <geometry><box><size>2.0616 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_20_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.0616 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-9.2500 -1.5000 0 0 -0 -1.81577</pose>
+    </link>
+    <link name='outer_21'>
+      <collision name='outer_21_col'>
+        <geometry><box><size>2.2361 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_21_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.2361 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-10.0000 -3.5000 0 0 -0 -2.03444</pose>
+    </link>
+    <link name='outer_22'>
+      <collision name='outer_22_col'>
+        <geometry><box><size>1.8028 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_22_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>1.8028 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-11.0000 -5.2500 0 0 -0 -2.15880</pose>
+    </link>
+    <link name='outer_23'>
+      <collision name='outer_23_col'>
+        <geometry><box><size>1.5811 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_23_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>1.5811 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-12.2500 -5.7500 0 0 -0 2.81984</pose>
+    </link>
+    <link name='outer_24'>
+      <collision name='outer_24_col'>
+        <geometry><box><size>1.8028 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_24_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>1.8028 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-13.5000 -4.7500 0 0 -0 2.15880</pose>
+    </link>
+    <link name='outer_25'>
+      <collision name='outer_25_col'>
+        <geometry><box><size>2.0000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_25_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.0000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-14.0000 -3.0000 0 0 -0 1.57080</pose>
+    </link>
+    <link name='outer_26'>
+      <collision name='outer_26_col'>
+        <geometry><box><size>2.0616 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_26_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.0616 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-13.7500 -1.0000 0 0 -0 1.32582</pose>
+    </link>
+    <link name='outer_27'>
+      <collision name='outer_27_col'>
+        <geometry><box><size>2.5000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='outer_27_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.5000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-12.7500 1.0000 0 0 -0 0.92730</pose>
+    </link>
+    <link name='inner_0'>
+      <collision name='inner_0_col'>
+        <geometry><box><size>5.0000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_0_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>5.0000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-10.5000 4.0000 0 0 -0 0.00000</pose>
+    </link>
+    <link name='inner_1'>
+      <collision name='inner_1_col'>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_1_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-6.0000 4.0000 0 0 -0 0.00000</pose>
+    </link>
+    <link name='inner_2'>
+      <collision name='inner_2_col'>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_2_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.0000 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-2.0000 4.0000 0 0 -0 0.00000</pose>
+    </link>
+    <link name='inner_3'>
+      <collision name='inner_3_col'>
+        <geometry><box><size>4.2621 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_3_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.2621 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>2.1310 4.0000 0 0 -0 0.00000</pose>
+    </link>
+    <link name='inner_4'>
+      <collision name='inner_4_col'>
+        <geometry><box><size>3.6486 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_4_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.6486 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>6.0248 3.5299 0 0 -0 -0.26060</pose>
+    </link>
+    <link name='inner_5'>
+      <collision name='inner_5_col'>
+        <geometry><box><size>2.7172 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_5_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.7172 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>8.9525 2.3609 0 0 -0 -0.54042</pose>
+    </link>
+    <link name='inner_6'>
+      <collision name='inner_6_col'>
+        <geometry><box><size>2.8889 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_6_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.8889 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>11.2730 0.7952 0 0 -0 -0.64350</pose>
+    </link>
+    <link name='inner_7'>
+      <collision name='inner_7_col'>
+        <geometry><box><size>4.0218 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_7_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.0218 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>13.6351 -1.6801 0 0 -0 -0.92730</pose>
+    </link>
+    <link name='inner_8'>
+      <collision name='inner_8_col'>
+        <geometry><box><size>4.1388 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_8_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>4.1388 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>13.9162 -5.1398 0 0 -0 -2.03444</pose>
+    </link>
+    <link name='inner_9'>
+      <collision name='inner_9_col'>
+        <geometry><box><size>3.3749 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_9_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.3749 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>11.4814 -7.7454 0 0 -0 -2.67795</pose>
+    </link>
+    <link name='inner_10'>
+      <collision name='inner_10_col'>
+        <geometry><box><size>3.2967 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_10_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.2967 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>8.3238 -8.5000 0 0 -0 3.14159</pose>
+    </link>
+    <link name='inner_11'>
+      <collision name='inner_11_col'>
+        <geometry><box><size>3.2888 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_11_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.2888 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>5.1154 -7.9800 0 0 -0 2.81984</pose>
+    </link>
+    <link name='inner_12'>
+      <collision name='inner_12_col'>
+        <geometry><box><size>3.8739 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_12_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.8739 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>1.6334 -7.2197 0 0 -0 3.01724</pose>
+    </link>
+    <link name='inner_13'>
+      <collision name='inner_13_col'>
+        <geometry><box><size>3.3829 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_13_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.3829 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-1.9570 -6.7014 0 0 -0 2.97644</pose>
+    </link>
+    <link name='inner_14'>
+      <collision name='inner_14_col'>
+        <geometry><box><size>3.3652 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_14_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.3652 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-5.1304 -5.6709 0 0 -0 2.67795</pose>
+    </link>
+    <link name='inner_15'>
+      <collision name='inner_15_col'>
+        <geometry><box><size>3.0762 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_15_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.0762 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-7.1218 -3.4592 0 0 -0 1.89255</pose>
+    </link>
+    <link name='inner_16'>
+      <collision name='inner_16_col'>
+        <geometry><box><size>0.7202 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_16_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>0.7202 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-7.4943 -1.6584 0 0 -0 1.24905</pose>
+    </link>
+    <link name='inner_17'>
+      <collision name='inner_17_col'>
+        <geometry><box><size>0.3304 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_17_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>0.3304 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-7.2430 -1.4084 0 0 -0 -0.58800</pose>
+    </link>
+    <link name='inner_18'>
+      <collision name='inner_18_col'>
+        <geometry><box><size>0.0660 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_18_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>0.0660 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-7.1386 -1.5000 0 0 -0 3.14159</pose>
+    </link>
+    <link name='inner_20'>
+      <collision name='inner_20_col'>
+        <geometry><box><size>1.7271 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_20_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>1.7271 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-7.4035 -2.3603 0 0 -0 -1.81577</pose>
+    </link>
+    <link name='inner_21'>
+      <collision name='inner_21_col'>
+        <geometry><box><size>2.5801 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_21_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.5801 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-8.1899 -4.3519 0 0 -0 -2.03444</pose>
+    </link>
+    <link name='inner_22'>
+      <collision name='inner_22_col'>
+        <geometry><box><size>3.4549 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_22_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.4549 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-9.7250 -6.9431 0 0 -0 -2.15880</pose>
+    </link>
+    <link name='inner_23'>
+      <collision name='inner_23_col'>
+        <geometry><box><size>3.7949 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_23_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.7949 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-12.4834 -7.7804 0 0 -0 2.81984</pose>
+    </link>
+    <link name='inner_24'>
+      <collision name='inner_24_col'>
+        <geometry><box><size>3.0945 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_24_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.0945 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-15.1417 -5.8930 0 0 -0 2.15880</pose>
+    </link>
+    <link name='inner_25'>
+      <collision name='inner_25_col'>
+        <geometry><box><size>2.8518 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_25_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.8518 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-16.0000 -3.1797 0 0 -0 1.57080</pose>
+    </link>
+    <link name='inner_26'>
+      <collision name='inner_26_col'>
+        <geometry><box><size>2.7116 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_26_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>2.7116 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-15.6712 -0.4384 0 0 -0 1.32582</pose>
+    </link>
+    <link name='inner_27'>
+      <collision name='inner_27_col'>
+        <geometry><box><size>3.9039 0.15 2.5</size></box></geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='inner_27_vis'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry><box><size>3.9039 0.15 2.5</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material>
+      </visual>
+      <pose>-14.1712 2.4384 0 0 -0 0.92730</pose>
+    </link>
+        </model>
+        <model name='vehicle_red' canonical_link='chassis'>
+            <pose>-8.0 3.0 0.15 0 0 0</pose>
+            <link name='chassis'>
+                <pose>0 0 0 0 0 0</pose>
+                <inertial><mass>0.5</mass><inertia><ixx>0.02</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.05</iyy><iyz>0</iyz><izz>0.06</izz></inertia></inertial>
+                <visual name='visual'><geometry><box><size>0.65 0.38 0.16</size></box></geometry>
+                  <material><ambient>0.8 0.0 0.0 1</ambient><diffuse>0.8 0.0 0.0 1</diffuse></material></visual>
+                <collision name='collision'><geometry><box><size>0.65 0.38 0.16</size></box></geometry></collision>
+            </link>
+            <link name="lidar_link">
+                <pose>0.25 0 0.10 0 0 0</pose>
+                <sensor name='gpu_lidar' type='gpu_lidar'>
+                    <topic>scan</topic><update_rate>50</update_rate>
+                    <ray><scan><horizontal><samples>360</samples><resolution>1</resolution><min_angle>-3.14</min_angle><max_angle>3.14</max_angle></horizontal></scan>
+                    <range><min>0.05</min><max>10</max></range></ray>
+                    <always_on>1</always_on><visualize>true</visualize>
+                </sensor>
+            </link>
+            <joint name='lidar_joint' type='fixed'><parent>chassis</parent><child>lidar_link</child></joint>
+            <link name='left_wheel'>
+                <pose>-0.20 0.20 -0.04 -1.57 0 0</pose>
+                <inertial><mass>0.05</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial>
+                <visual name='v'><geometry><cylinder><radius>0.10</radius><length>0.05</length></cylinder></geometry><material><ambient>0.1 0.1 0.1 1</ambient></material></visual>
+                <collision name='c'><geometry><cylinder><radius>0.10</radius><length>0.05</length></cylinder></geometry></collision>
+            </link>
+            <link name='right_wheel'>
+                <pose>-0.20 -0.20 -0.04 -1.57 0 0</pose>
+                <inertial><mass>0.05</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial>
+                <visual name='v'><geometry><cylinder><radius>0.10</radius><length>0.05</length></cylinder></geometry><material><ambient>0.1 0.1 0.1 1</ambient></material></visual>
+                <collision name='c'><geometry><cylinder><radius>0.10</radius><length>0.05</length></cylinder></geometry></collision>
+            </link>
+            <link name='caster'>
+                <pose>0.25 0 -0.08 0 0 0</pose>
+                <inertial><mass>0.02</mass><inertia><ixx>0.00005</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.00005</iyy><iyz>0</iyz><izz>0.00005</izz></inertia></inertial>
+                <visual name='v'><geometry><sphere><radius>0.05</radius></sphere></geometry></visual>
+                <collision name='c'><geometry><sphere><radius>0.05</radius></sphere></geometry></collision>
+            </link>
+            <joint name='left_wheel_joint' type='revolute'><parent>chassis</parent><child>left_wheel</child>
+                <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis></joint>
+            <joint name='right_wheel_joint' type='revolute'><parent>chassis</parent><child>right_wheel</child>
+                <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis></joint>
+            <joint name='caster_joint' type='ball'><parent>chassis</parent><child>caster</child></joint>
+            <plugin filename="libignition-gazebo-diff-drive-system.so" name="ignition::gazebo::systems::DiffDrive">
+                <left_joint>left_wheel_joint</left_joint><right_joint>right_wheel_joint</right_joint>
+                <wheel_separation>0.40</wheel_separation><wheel_radius>0.10</wheel_radius>
+                <odom_publish_frequency>50</odom_publish_frequency><topic>cmd_vel</topic>
+            </plugin>
+        </model>
+        <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
+            <input type="ignition.msgs.Int32" topic="/keyboard/keypress"><match field="data">16777235</match></input>
+            <output type="ignition.msgs.Twist" topic="/cmd_vel">linear: {x: 1.5}</output>
+        </plugin>
+        <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
+            <input type="ignition.msgs.Int32" topic="/keyboard/keypress"><match field="data">16777237</match></input>
+            <output type="ignition.msgs.Twist" topic="/cmd_vel">linear: {x: -1.5}</output>
+        </plugin>
+        <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
+            <input type="ignition.msgs.Int32" topic="/keyboard/keypress"><match field="data">16777234</match></input>
+            <output type="ignition.msgs.Twist" topic="/cmd_vel">angular: {z: 1.2}</output>
+        </plugin>
+        <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
+            <input type="ignition.msgs.Int32" topic="/keyboard/keypress"><match field="data">16777236</match></input>
+            <output type="ignition.msgs.Twist" topic="/cmd_vel">angular: {z: -1.2}</output>
+        </plugin>
+    </world>
+</sdf>
