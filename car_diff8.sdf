@@ -9,7 +9,7 @@
         <plugin filename="libignition-gazebo-user-commands-system.so" name="ignition::gazebo::systems::UserCommands" />
         <plugin filename="libignition-gazebo-scene-broadcaster-system.so" name="ignition::gazebo::systems::SceneBroadcaster" />
         <plugin filename="libignition-gazebo-sensors-system.so" name="ignition::gazebo::systems::Sensors">
-            <render_engine>ogre</render_engine>
+            <render_engine>ogre2</render_engine>
         </plugin>
         <light type="directional" name="sun">
             <cast_shadows>true</cast_shadows>
@@ -701,11 +701,11 @@
                 <collision name='collision'><geometry><box><size>0.65 0.38 0.16</size></box></geometry></collision>
             </link>
             <link name="lidar_link">
-                <pose>0.25 0 0.10 0 0 0</pose>
+                <pose>0.25 0 0.25 0 0 0</pose>
                 <sensor name='gpu_lidar' type='gpu_lidar'>
                     <topic>scan</topic><update_rate>50</update_rate>
                     <ray><scan><horizontal><samples>360</samples><resolution>1</resolution><min_angle>-3.14</min_angle><max_angle>3.14</max_angle></horizontal></scan>
-                    <range><min>0.05</min><max>10</max></range></ray>
+                    <range><min>0.15</min><max>50</max></range></ray>
                     <always_on>1</always_on><visualize>true</visualize>
                 </sensor>
             </link>

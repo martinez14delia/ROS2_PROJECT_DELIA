@@ -13,28 +13,6 @@ def generate_launch_description():
         cmd=['ign', 'gazebo', '-r', sdf_file],
         output='screen'
     )
-
-    # para usar el SLAM
-    slam_node = Node(
-    package='slam_toolbox',
-    executable='async_slam_toolbox_node',
-    name='slam_toolbox',
-    output='screen',
-    parameters=[{
-        'use_sim_time': True,
-        'odom_frame': 'vehicle_red/odom',
-        'base_frame': 'vehicle_red/chassis',
-        'scan_topic': '/scan',
-        'mode': 'mapping'
-    }]
-)
-    
-    # TF para el lidar 
-    static_tf = Node(
-    package='tf2_ros',
-    executable='static_transform_publisher',
-    arguments=['0', '0', '0', '0', '0', '0', 'vehicle_red/chassis', 'vehicle_red/lidar_link/gpu_lidar']
-    )
     
     # Bridge
     bridge = Node(
@@ -53,9 +31,42 @@ def generate_launch_description():
     output='screen'
 )
 
+    # TF lidar->chassis (posición del lidar en el SDF: x=0.25, z=0.10)
+    tf_lidar = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='tf_lidar',
+        arguments=[
+            '--x', '0.25', '--y', '0', '--z', '0.25',
+            '--roll', '0', '--pitch', '0', '--yaw', '0',
+            '--frame-id', 'vehicle_red/chassis',
+            '--child-frame-id', 'vehicle_red/lidar_link/gpu_lidar'
+        ],
+        output='screen'
+    )
+    
+    # para usar el SLAM
+    slam_node = Node(
+    package='slam_toolbox',
+    executable='async_slam_toolbox_node',
+    name='slam_toolbox',
+    output='screen',
+    parameters=[{
+        'use_sim_time': True,
+        'odom_frame': 'vehicle_red/odom',
+        'base_frame': 'vehicle_red/chassis',
+        'scan_topic': '/scan',
+        'mode': 'mapping',
+        'max_laser_range':50.0,
+        'resolution': 0.05,
+        'minimum_travel_distance':0.1,
+        'minimum_travel_heading':0.1,
+    }]
+)
+    
     return LaunchDescription([
         gazebo,
         bridge,
-        static_tf,
+        tf_lidar,
         slam_node,
     ])
